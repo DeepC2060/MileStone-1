@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Highlight Words with More Than 8 Characters</title>
+	<style>
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p id="my-paragraph">This is a paragraph with some words that have more than 8 characters.</p>
+
+	<script>
+		// Get the paragraph element by its ID
+		const paragraph = document.getElementById('my-paragraph');
+
+		// Split the paragraph into an array of words
+		const words = paragraph.innerHTML.split(' ');
+
+		// Loop through each word and highlight it if it has more than 8 characters
+		words.forEach((word) => {
+			if (word.length > 8) {
+				paragraph.innerHTML = paragraph.innerHTML.replace(word, `<span class="highlight">${word}</span>`);
+			}
+		});
+	</script>
+</body>
+</html>
